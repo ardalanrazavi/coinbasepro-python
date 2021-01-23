@@ -13,9 +13,9 @@ from cbpro.websocket_client import WebsocketClient
 
 
 class OrderBook(WebsocketClient):
-    def __init__(self, product_id='BTC-USD', log_to=None):
+    def __init__(self, product_id='BTC-USD', log_to=None, channel='full'):
         super(OrderBook, self).__init__(
-            products=product_id, channels=['full'])
+            products=product_id, channels=[channel])
         self._asks = SortedDict()
         self._bids = SortedDict()
         self._client = PublicClient()
